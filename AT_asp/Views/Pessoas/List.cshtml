@@ -1,0 +1,28 @@
+﻿@model List<ViewPessoas>
+@{
+    ViewData["Title"] = "List";
+
+}
+<h1>Lista de amigos</h1>
+<table class="table table-bordered table-dark">
+    <thead>
+        <tr>
+
+            <th scope="col">Nome</th>
+            <th scope="col">Sobrenome</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ViewPessoas p in Model)
+        {
+            
+            <tr>
+                <td>@p.Nome</td>
+                <td>@p.Sobrenome</td>
+                <td>@p.Aniversario</td>
+                <td><a asp-controller="Pessoas" asp-action="Details" asp-route-id="@p.id"> Detalhes </a></td>
+            </tr>
+        }
+    </tbody>
+</table>

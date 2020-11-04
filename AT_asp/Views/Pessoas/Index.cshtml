@@ -1,0 +1,30 @@
+﻿@model IList<IList<ViewPessoas>>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<ul class="list-group">
+
+    <h1 class="display-4">Aniversáriantes do dia</h1>
+    @foreach (ViewPessoas p in Model[0])
+    {
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            @p.Nome @p.Sobrenome
+            <span class="badge badge-primary badge-pill">Parabéns!!!</span>
+        </li>
+    }
+</ul>
+
+<h1 class="display-4">Proximos aniversários</h1>
+<ul class="list-group">
+    @foreach (ViewPessoas p in Model[1])
+    {
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            @p.Nome @p.Sobrenome
+            <span class="badge badge-primary badge-pill">@p.Aniversario.ToString("dd/MM/yyyy")</span>
+        </li>
+    }
+</ul>

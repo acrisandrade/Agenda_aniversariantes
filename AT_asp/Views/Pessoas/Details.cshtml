@@ -1,0 +1,28 @@
+﻿@model ViewPessoas
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes</h1>
+<table class="table table-bordered table-dark">
+    <thead>
+        <tr>
+
+            <th scope="col">Nome</th>
+            <th scope="col">Sobrenome</th>
+            <th scope="col">Data Aniversário</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Nome</td>
+            <td>@Model.Sobrenome</td>
+            <td>@Model.Aniversario</td>
+            <td><a asp-controller="Pessoas" asp-action="Delete" asp-route-id="@Model.id"> Excluir </a></td>
+            <td><a asp-controller="Pessoas" asp-action="Edit" asp-route-id="@Model.id"> Editar </a></td>
+
+
+        </tr>
+    </tbody>
+</table>
+
